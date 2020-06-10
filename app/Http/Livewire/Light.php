@@ -20,16 +20,12 @@ class Light extends Component
 
     public function increment()
     {
-        if ($this->brightness <= 90) {
-            $this->brightness += 10;
-        }
+        $this->brightness = min(100, $this->brightness + 10);
     }
 
     public function decrement()
     {
-        if ($this->brightness >= 10) {
-            $this->brightness -= 10;
-        }
+        $this->brightness = max(0, $this->brightness - 10);
     }
 
     public function render()

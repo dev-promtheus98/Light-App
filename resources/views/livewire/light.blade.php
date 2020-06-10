@@ -5,9 +5,9 @@
     </div>
 
     <div class="mt-3">
-        <button class="btn btn-danger" wire:click="off">Off</button>
-        <button class="btn btn-secondary" wire:click="increment">+</button>
-        <button class="btn btn-secondary" wire:click="decrement">-</button>
-        <button class="btn btn-primary" wire:click="on">On</button>
+        <button class="btn btn-danger" wire:click="off" @if($brightness == 0) disabled @endif>Off</button>
+        <button class="btn btn-secondary" wire:click="increment" @if($brightness > 90) disabled @endif>+</button>
+        <button class="btn btn-secondary" wire:click="decrement" @if($brightness < 10) disabled @endif>-</button>
+        <button class="btn btn-primary" wire:click="on" @if($brightness == 100) disabled @endif>On</button>
     </div>
 </div>
